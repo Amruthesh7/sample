@@ -1,8 +1,2 @@
-# Use official Nginx image
-FROM nginx:latest
-
-# Copy your sample.html to the web root
+FROM nginx:alpine
 COPY sample.html /usr/share/nginx/html/index.html
-
-# Expose port 80
-EXPOSE 80
