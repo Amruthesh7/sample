@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dreamy Night Sky</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      font-family: 'Georgia', serif;
+      background: radial-gradient(circle at 50% 30%, #001f3f, #000814);
+      overflow: hidden;
+      color: white;
+    }
+
+    .moon {
+      width: 100px;
+      height: 100px;
+      background: #fff9c4;
+      border-radius: 50%;
+      position: absolute;
+      top: 60px;
+      left: 50%;
+      transform: translateX(-50%);
+      box-shadow: 0 0 40px 20px #fff9c4;
+      animation: glow 4s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      0% { box-shadow: 0 0 30px 10px #fff9c4; }
+      100% { box-shadow: 0 0 60px 25px #fff9c4; }
+    }
+
+    .stars {
+      position: absolute;
+      width: 2px;
+      height: 2px;
+      background: white;
+      border-radius: 50%;
+      animation: twinkle 3s infinite ease-in-out alternate;
+    }
+
+    @keyframes twinkle {
+      0% { opacity: 0.2; transform: scale(0.8); }
+      100% { opacity: 1; transform: scale(1.2); }
+    }
+
+    .poem-box {
+      position: absolute;
+      bottom: 100px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid #ffffff30;
+      border-radius: 10px;
+      padding: 20px;
+      width: 80%;
+      max-width: 600px;
+      text-align: center;
+      backdrop-filter: blur(6px);
+    }
+
+    .poem-box h2 {
+      margin-top: 0;
+      color: #f0f8ff;
+    }
+
+    .poem-box p {
+      margin: 8px 0;
+      font-size: 18px;
+      color: #e0e0ff;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="moon"></div>
+
+  <!-- Random stars -->
+  <script>
+    for (let i = 0; i < 80; i++) {
+      const star = document.createElement("div");
+      star.className = "stars";
+      star.style.top = Math.random() * 100 + "%";
+      star.style.left = Math.random() * 100 + "%";
+      star.style.animationDuration = (2 + Math.random() * 3) + "s";
+      document.body.appendChild(star);
+    }
+  </script>
+
+  <div class="poem-box">
+    <h2>Poem: Under the Moon</h2>
+    <p>The moon above, so soft and bright,</p>
+    <p>It whispers dreams into the night.</p>
+    <p>With stars that twinkle, blink, and play,</p>
+    <p>It leads your worries far away.</p>
+    <p>Close your eyes and let it guide,</p>
+    <p>To peaceful lands where dreams reside.</p>
+  </div>
+
+</body>
+</html>
